@@ -3,27 +3,23 @@
       <div class="col-md-6 mx-auto">  
         <div class="card mx-4">  
           <div class="card-body p-4">  
-            <form [formGroup]="employeeForm" (ngSubmit)="onFormSubmit(employeeForm.value)">  
-              <h1 style="text-align:center">Register</h1>  
+            <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">  
+              <h1 style="text-align:center">Register User</h1>  
             
-              <div class="input-group mb-3">  
-               
-                <input type="text" class="form-control" placeholder="Username"  formControlName="UserName">  
+              <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Name"  formControlName="name"autocomplete="on">  
               </div>  
               <div class="input-group mb-3">  
-                <input type="text" class="form-control" placeholder="Loginname"  formControlName="LoginName">  
-              </div>  
-              <div class="input-group mb-3">  
-                <input type="password" class="form-control" placeholder="Password"  formControlName="Password">  
+                <input type="password" class="form-control" placeholder="Pasword"  formControlName="password" autocomplete="on">  
               </div>  
               <div class="input-group mb-4">  
-                <input type="text" class="form-control" placeholder="Email"  formControlName="Email">  
+                <input type="text" class="form-control" placeholder="Email"  formControlName="email" autocomplete="on">  
               </div>  
               <div class="input-group mb-4">  
-                <input type="text" class="form-control" placeholder="Contact No"  formControlName="ContactNo">  
+                <input type="text" class="form-control" placeholder="Date of birth"  formControlName="dateOfBirth" autocomplete="on">  
               </div>  
               <div class="input-group mb-4">  
-                <input type="text" class="form-control" placeholder="Address"  formControlName="Address">  
+                <input type="text" class="form-control" placeholder="Zip code"  formControlName="zipCode" autocomplete="on">  
               </div>  
               <button type="submit" class="btn btn-block btn-success">Add User</button>  
             </form>  
