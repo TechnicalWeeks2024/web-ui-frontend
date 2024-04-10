@@ -9,19 +9,17 @@ import { LoginService } from '../login.service';
   styleUrls: ['./login.component.css']    
 })    
 export class LoginComponent {    
-    
   model : any={};    
-    
-  errorMessage:string;    
+  errorMessage:string; 
+
   constructor(private router:Router,private LoginService:LoginService) { }    
-    
     
   ngOnInit() {    
     sessionStorage.removeItem('UserName');    
     sessionStorage.clear();    
-  }    
-  login(){    
+  }
+
+  login() {    
     debugger;    
-      
   };    
  }     

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';    
 import { LoginService } from '../login.service';    
-import { User} from '../user';    
-import { Observable} from 'rxjs';    
+import { User } from '../user';    
+import { Observable } from 'rxjs';    
 import { NgForm, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';    
     
 @Component({    
