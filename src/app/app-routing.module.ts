@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';    
 import { DashboardComponent } from './dashboard/dashboard.component';    
 import { UsersComponent } from './users/users.component';    
-import { RegisterComponent } from './register/register.component';    
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';   
     
     
 export const routes: Routes = [    
@@ -31,7 +32,14 @@ export const routes: Routes = [
     data: {    
       title: 'Add User Page'    
     }    
-  },    
+  },
+  {    
+    path: 'Login',    
+    component: LoginComponent,    
+    data: {    
+      title: 'Login'    
+    }    
+  },   
 ];    
     
 @NgModule({    
