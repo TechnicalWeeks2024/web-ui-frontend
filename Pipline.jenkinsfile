@@ -1,0 +1,47 @@
+#!groovy
+//  groovy Jenkinsfile
+properties([disableConcurrentBuilds()])
+
+pipeline  {
+    agent { 
+        label 'master'
+        }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
+         stage("docker stop") {
+            steps {
+                echo " ============== stoping frontend image =================="
+                sh '''
+                docker stop frontend
+                '''
+            }
+        } 
+        stage("docker remove") {
+            steps {
+                echo " ============== removing frontend docker container =================="
+                sh '''
+                docker rm frontend
+                '''
+            }
+        }
+        stage("Create docker image") {
+            steps {
+                echo 'Creating docker image ...'
+                dir('.'){
+                    sh "docker build -t frontend . "
+                }
+            }
+        }
+        stage("docker run") {
+            steps {
+                echo " ============== starting frontend container =================="
+                sh '''
+                docker run -d --restart=always --name frontend -p 80:4200 frontend
+                '''
+            }
+        }
+    }
+}
