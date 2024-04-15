@@ -13,8 +13,8 @@ export class LoginService {
   header : any;  
   constructor(private http : HttpClient) {   
   
-    this.JavaUrl = 'http://localhost:8081/magic-java-be/users';
-    this.NetUrl = 'https://localhost:5001/Api/User';  
+    this.JavaUrl = 'http://web.demo-net.pp.ua:7777/magic-java-be/users';
+    this.NetUrl = 'http://web.demo-net.pp.ua:5000/Api/User';  
   
     const headerSettings: {[name: string]: string | string[]; } = {};  
     this.header = new HttpHeaders(headerSettings);  
